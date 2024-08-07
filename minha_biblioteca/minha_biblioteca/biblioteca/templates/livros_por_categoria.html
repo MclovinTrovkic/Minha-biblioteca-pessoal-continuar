@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Livros por Categoria</title></head>
+<body>
+    <h2>Livros na Categoria "{{ categoria.nome }}"</h2>
+    <ul>
+        {% for livro in livros %}
+            <li>{{ livro.titulo }} ({{ livro.ano_publicacao }})</li>
+        {% empty %}
+            <li>Não há livros registrados nesta categoria.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'dashboard' %}">Voltar ao Dashboard</a>
+</body>
+</html>

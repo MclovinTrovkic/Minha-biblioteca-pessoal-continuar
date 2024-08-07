@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Contagem de Livros</title></head>
+<body>
+    <h2>Contagem de Livros por Usuário</h2>
+    <ul>
+        {% for item in contagem %}
+            <li>Usuário ID: {{ item.usuario }} - Livros: {{ item.contagem }}</li>
+        {% empty %}
+            <li>Nenhum livro encontrado.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'dashboard' %}">Voltar ao Dashboard</a>
+</body>
+</html>

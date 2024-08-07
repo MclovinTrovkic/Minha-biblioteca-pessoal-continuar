@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Livros por Autor</title></head>
+<body>
+    <h2>Livros de {{ autor.nome }}</h2>
+    <ul>
+        {% for livro in livros %}
+            <li>{{ livro.titulo }} ({{ livro.ano_publicacao }})</li>
+        {% empty %}
+            <li>Não há livros registrados para este autor.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'dashboard' %}">Voltar ao Dashboard</a>
+</body>
+</html>
